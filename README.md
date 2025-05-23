@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNITED POTENTIAL AFRICA COMPANY LIMITED</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c5f2d;
+            --secondary-color: #97bc62;
+            --accent-color: #f5f5dc;
+            --text-color: #333;
+            --light-color: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary-color);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 1.5rem;
+            position: relative;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            width: 200px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 10;
+        }
+        
+        nav ul li:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .dropdown-menu li {
+            margin: 0;
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .dropdown-menu li a {
+            color: var(--text-color);
+        }
+        
+        .dropdown-menu li a:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #7ca44a;
+        }
+        
+        /* About Section */
+        .about {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .section-title p {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        
+        .about-text {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Values Section */
+        .values {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .value-card {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .value-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .value-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        /* Business Section */
+        .business {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .business-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .business-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .business-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .business-card-content {
+            padding: 1.5rem;
+        }
+        
+        .business-card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .read-more-btn {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: bold;
+            margin-top: 1rem;
+            text-decoration: none;
+        }
+        
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+        
+        /* Team Section */
+        .team {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .team-member {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+        
+        .team-member img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .team-member-info {
+            padding: 1.5rem;
+        }
+        
+        .team-member h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        .team-member p.position {
+            color: var(--secondary-color);
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .contact-info {
+            flex: 1;
+            min-width: 300px;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-info p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-details {
+            margin-top: 2rem;
+        }
+        
+        .contact-details div {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .contact-details i {
+            margin-right: 1rem;
+            color: var(--primary-color);
+        }
+        
+        .contact-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-col h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary-color);
+        }
+        
+        .footer-col ul {
+            list-style: none;
+        }
+        
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-col ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col ul li a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+            
+            .dropdown-menu {
+                position: static;
+                width: 100%;
+                opacity: 1;
+                visibility: visible;
+                display: none;
+                box-shadow: none;
+                background-color: transparent;
+            }
+            
+            nav ul li:hover .dropdown-menu {
+                display: block;
+            }
+            
+            .dropdown-menu li {
+                padding: 0.5rem 0;
+                border-bottom: none;
+            }
+            
+            .dropdown-menu li a {
+                color: white;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .btn {
+                padding: 0.6rem 1.2rem;
+            }
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 2rem;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            position: relative;
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-color);
+        }
+        
+        .modal-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Resource Center Styles */
+        .resources {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .resource-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .resource-card {
+            background-color: var(--light-color);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .resource-card:hover {
+            background-color: var(--secondary-color);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .resource-card i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        
+        .resource-card h3 {
+            margin-bottom: 1rem;
+        }
+        
+        /* Partners Section */
+        .partners {
+            padding: 5rem 0;
+            background-color: var(--light-color);
+        }
+        
+        .partner-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .partner-logo {
+            width: 150px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            padding: 1rem;
+            border-radius: 5px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        
+        .partner-logo:hover {
+            transform: translateY(-10px);
+        }
+        
+        .partner-logo img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+        }
+        
+        /* FAQs Section */
+        .faqs {
+            padding: 5rem 0;
+            background-color: white;
+        }
+        
+        .accordion {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-item {
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .accordion-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .accordion-header:hover {
+            background-color: #1e4b1f;
+        }
+        
+        .accordion-content {
+            background-color: var(--light-color);
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        .accordion-content-inner {
+            padding: 1.5rem;
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="index.html" class="logo">UNITED POTENTIAL <span>AFRICA</span></a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li>
+                        <a href="#">About <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#about">About Us</a></li>
+                            <li><a href="#vision">Vision</a></li>
+                            <li><a href="#mission">Mission</a></li>
+                            <li><a href="#values">Core Values</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Business <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#agribusiness">Agribusiness</a></li>
+                            <li><a href="#logistics">Logistics</a></li>
+                            <li><a href="#consultancy">Consultancy</a></li>
+                            <li><a href="#climate-smart">Climate Smart</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#team">Team</a></li>
+                    <li><a href="#resources">Resource Center</a></li>
+                    <li><a href="#partners">Partners</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Strengthening Rural Communities Through Sustainable Agribusiness</h1>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED is a newly established private entity registered in Tanzania, focused on enhancing agribusiness value chains and building community capacities.</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About UNITED POTENTIAL AFRICA COMPANY LIMITED</h2>
+                <p>We are committed to sustainable rural development through innovative agricultural practices and community empowerment.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Our Story</h3>
+                    <p>UNITED POTENTIAL AFRICA COMPANY LIMITED is a newly established (EST: 2024) private entity registered in the United Republic of Tanzania. Our broad focus is on strengthening rural communities through sustainable agribusiness and market.</p>
+                    <p>We enhance agribusiness in value chains addition and build capacities of our communities to improve and ensure food security and rural development in the country.</p>
+                    <a href="#" class="btn" id="read-more-about">Read More</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Farmers in Tanzania">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Modal -->
+    <div id="about-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">About UNITED POTENTIAL AFRICA COMPANY LIMITED</h2>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED is a newly established (EST: 2024) private entity registered in the United Republic of Tanzania. Our broad focus is on strengthening rural communities through sustainable agribusiness and market.</p>
+            <p>Enhancement of agribusiness in value chains addition and building capacities of our communities to improve and ensure food security and rural development in the country.</p>
+            
+            <h3>Our Ambition</h3>
+            <p>It is our ambition to first, become the company of choice for youth employment in sustainable Agriculture, agribusiness and community development practice in rural communities in Tanzania. Second, be the catalyst for community development through sustainable agriculture production systems.</p>
+            <p>Through agriculture, build the productive capacities of community members (small-scale farmers), to improve production methods and strengthen agricultural and livestock value chains and improve the welfare of rural communities faced with the negative impacts of climate change.</p>
+            
+            <h3>Our Strength</h3>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED Strength The most important element of our service is our people. Our associates both Nationals have evolved into an exceptional team with superior execution in every endeavor.</p>
+            <p>We realize that employee experience is our most important asset. It has been my pleasure and an immense privilege to be part of UNITED POTENTIAL AFRICA COMPANY LIMITED growth since its newly established company. It is our great hope that, after looking over our information, we invite you to call us and set up a meeting to view our facilities and discuss your needs.</p>
+        </div>
+    </div>
+
+    <!-- Vision, Mission, Values Section -->
+    <section class="values">
+        <div class="container">
+            <div id="vision" class="section-title">
+                <h2>Our Vision</h2>
+                <p>To be a company that retains highly qualified personnel, provides for their career development, and establishes programs that provide a high degree of personal and family economic security.</p>
+                <p>Keeping ownership and control of our company in the hands of its employees. Further to that, to maintain a financially strong business earning a reasonable profit, which is the only way we can provide security for our personnel, continue quality service for our customers, and reward our shareholders. To be an organization that has a passion for excellence in every activity we conduct.</p>
+            </div>
+            
+            <div id="mission" class="section-title" style="margin-top: 4rem;">
+                <h2>Our Mission</h2>
+                <p>To be a company of choice based on its innovation and a leader in identifying value added to commodities and adapting new techniques and technologies that connect to our customers.</p>
+                <p>To be a company that provides its customers recommendations and solutions that are unbiased by potential economic gains from outside suppliers.</p>
+            </div>
+            
+            <div id="values" class="section-title" style="margin-top: 4rem;">
+                <h2>Our Core Values</h2>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <i class="fas fa-smile"></i>
+                    <h3>Customer Satisfaction</h3>
+                    <p>We prioritize our customers' needs and strive to exceed their expectations in every interaction.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-user-tie"></i>
+                    <h3>Professionalism</h3>
+                    <p>We maintain the highest standards of professionalism in all our business dealings.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-sync-alt"></i>
+                    <h3>Consistency</h3>
+                    <p>We deliver reliable and consistent services to build trust with our stakeholders.</p>
+                </div>
+                <div class="value-card">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Integrity</h3>
+                    <p>We conduct our business with honesty, transparency, and ethical practices.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Business Section -->
+    <section id="business" class="business">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Business Areas</h2>
+                <p>We operate in key sectors that drive sustainable rural development in Tanzania.</p>
+            </div>
+            <div class="business-grid">
+                <div id="agribusiness" class="business-card">
+                    <img src="https://images.unsplash.com/photo-1586771107445-d3ca888129ce?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Agribusiness">
+                    <div class="business-card-content">
+                        <h3>Agribusiness</h3>
+                        <p>Agriculture: Tanzania remains a major contributor to Tanzania's economy contributing about 13% to the country's Gross Domestic Product (GDP). Agriculture is also a major employer in Tanzania and currently employs about half the total workforce in Tanzania.</p>
+                        <a href="#" class="read-more-btn" id="read-more-agribusiness">Read More</a>
+                    </div>
+                </div>
+                
+                <div id="logistics" class="business-card">
+                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Logistics">
+                    <div class="business-card-content">
+                        <h3>Logistics</h3>
+                        <p>Transportation Management: At UNITED POTENTIAL AFRICA COMPANY LIMITED with its logistics partners selection of our staff is critical. Whether it's an apprentice packer or graduate trainee, our professional staff benefit from training in practical packing skills, languages, customs and shipping procedures.</p>
+                        <a href="#" class="read-more-btn" id="read-more-logistics">Read More</a>
+                    </div>
+                </div>
+                
+                <div id="consultancy" class="business-card">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Consultancy">
+                    <div class="business-card-content">
+                        <h3>Consultancy</h3>
+                        <p>Experience counts: From small scale production and trade operations to complex projects and logistics of commodities.</p>
+                        <a href="#" class="read-more-btn" id="read-more-consultancy">Read More</a>
+                    </div>
+                </div>
+                
+                <div id="climate-smart" class="business-card">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Climate Smart">
+                    <div class="business-card-content">
+                        <h3>Climate Smart</h3>
+                        <p>Organic Restoration of Nature: UNITED POTENTIAL AFRICA COMPANY LIMITED throughout is undertakings, it works with partners to establish environmental account that, not only looks in to giving back to the communities it works with but also work to promote agroforestry in all counties it works in.</p>
+                        <a href="#" class="read-more-btn" id="read-more-climate-smart">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Agribusiness Modal -->
+    <div id="agribusiness-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Agribusiness</h2>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED believes that agriculture alone is not enough to bring about meaningful sustainable rural development to the Tanzania people; there is need for Tanzania to diversify from primary agriculture into Agro processing. Alternative or additional income generating opportunities are needed to support the millions of poor families who can no longer support their livelihoods from the land alone.</p>
+            
+            <h3>Agro Processing</h3>
+            <p>Agro processing - turning primary agricultural products into other commodities for the market - has the potential to provide those opportunities. Currently the Agro processing industry and the manufacturing industry contributes to less than 10% to Tanzania's Gross Domestic product with increase investment it is hoped that the sector can contribute more to Tanzania economic well-being and bring about tangible benefits to the Tanzanian people such as employment creation and poverty alleviation.</p>
+        </div>
+    </div>
+
+    <!-- Logistics Modal -->
+    <div id="logistics-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Logistics</h2>
+            <h3>Transportation Management</h3>
+            <p>Whether it's an apprentice packer or graduate trainee, our professional staff benefit from training in practical packing skills, languages, customs and shipping procedures and most importantly, to consistently recognize that the customer always comes first.</p>
+            <p>Your commodities' movements will be handled by a friendly and knowledgeable coordinator who is your personal point of contact. Your coordinator, through our computerized tracking systems, will know where your shipment is at all times and communicate on its status at each stage.</p>
+            
+            <h3>Packing and Crating</h3>
+            <p>When you move with UNITED POTENTIAL AFRICA COMPANY LIMITED you can be sure that your valuable possessions will be carefully handled and protected to the highest standards in this industry. UNITED POTENTIAL AFRICA COMPANY LIMITED uses high quality material, such as padded multi-layer furniture wraps and glass and are packed using the clean-pack system before being placed into especially reinforced export cartons which are regularly tested to comply with world standards. In line with our commitment to a quality environment, all paper materials are recyclable.</p>
+            <p>Family treasures are identified, and professional advice given as to the most secure method of shipment – a caring approach to your most valued possessions. Work of arts and antiques receive special attention and can be packed into custom built crates to ensure optimum protection during their journey. Silverware is wrapped in acid free tissue paper to prevent tarnishing particularly when moving to hotter and humid climates.</p>
+        </div>
+    </div>
+
+    <!-- Consultancy Modal -->
+    <div id="consultancy-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Consultancy</h2>
+            <p>Experience counts: From small scale Production and trade operations to complex projects and logistics of commodities. Managing National and International Complex projects requires experienced, intelligent and knowledgeable personnel who are committed to researching all options, surveying, potential problems, physical and non-physical obstacles and reacting to extraordinary circumstances with quick and decisive actions. UNITED POTENTIAL AFRICA COMPANY LIMITED of Experts are ready to provide strategic solutions your demands.</p>
+        </div>
+    </div>
+
+    <!-- Climate Smart Modal -->
+    <div id="climate-smart-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Climate Smart Initiatives</h2>
+            <h3>Organic Restoration of Nature</h3>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED throughout is undertakings, it works with partners to establish environmental account that, not only looks in to giving back to the communities it works with but also work to promote agroforestry in all counties it works in. Establishing community gardens and tree seedling nurseries that produces eco-friendly friendly seedlings to be distributed to the community members we work with.</p>
+            
+            <h3>Community Nurseries and Garden</h3>
+            <h4>Agribusiness Resilience Program Initiative</h4>
+            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED provide access to customized advice and in-depth business plans to receive:</p>
+            <ul>
+                <li>Opportunity to exhibit at agricultural Trade Fairs International, Regional Trade days and National</li>
+                <li>Opportunity to exhibit at CRDB Bank Green Expo largest trade only, green life event in Tanzania</li>
+                <li>Substantial discount to exhibit at National Agribusiness Trade Fairs</li>
+                <li>Sponsorship/Advertising opportunities in Leaflet Magazine Distributed to all UNITED POTENTIAL AFRICA COMPANY LIMITED and its Media Partners</li>
+                <li>Invitation to attend UNITED POTENTIAL AFRICA COMPANY LIMITED and Partners member only networking events and nursery site tours</li>
+                <li>Access to attend UNITED POTENTIAL AFRICA COMPANY LIMITED Annual Dinner</li>
+                <li>Member only rates for training courses. More courses to come soon!</li>
+                <li>Resources and technical information relevant to our industry</li>
+                <li>Relevant projects to support industries</li>
+                <li>Discounts/deals offered from our partners to members only</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>Meet the dedicated professionals driving our mission forward.</p>
+            </div>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Cletus Cleophace Kahwa">
+                    <div class="team-member-info">
+                        <h3>Cletus Cleophace Kahwa</h3>
+                        <p class="position">Managing Director, Tanzania</p>
+                        <p>An International Development Management Expert, specialized in agriculture production and management value chain, carrying over seven (7) years in the Development Management Practices in Tanzania.</p>
+                        <a href="#" class="read-more-btn" id="read-more-director">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80" alt="Msajiri Daud Surgeon">
+                    <div class="team-member-info">
+                        <h3>Msajiri Daud Surgeon</h3>
+                        <p class="position">Company Secretary</p>
+                        <p>Business Management and Logistic Management Technician supporting our operations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Director Modal -->
+    <div id="director-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Cletus Cleophace Kahwa</h2>
+            <p class="position">Managing Director, Tanzania</p>
+            <p>An International Development Management Expert, specialized in agriculture production and management value chain, carrying over seven (7) years in the Development Management Practices in Tanzania.</p>
+        </div>
+    </div>
+
+    <!-- Resource Center Section -->
+    <section id="resources" class="resources">
+        <div class="container">
+            <div class="section-title">
+                <h2>Resource Center</h2>
+                <p>Access our valuable resources and registration portals.</p>
+            </div>
+            <div class="resource-grid">
+                <div class="resource-card" id="profile-resource">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Company Profile</h3>
+                    <p>Access and Download UNITED POTENTIAL AFRICA COMPANY LIMITED Profile</p>
+                </div>
+                
+                <div class="resource-card" id="partners-resource">
+                    <i class="fas fa-book"></i>
+                    <h3>Guide to New Partners</h3>
+                    <p>Online registration for potential partners</p>
+                </div>
+                
+                <div class="resource-card" id="youth-resource">
+                    <i class="fas fa-users"></i>
+                    <h3>Youth and Farmers Portal</h3>
+                    <p>Online registration for youth and farmers</p>
+                </div>
+                
+                <div class="resource-card" id="member-resource">
+                    <i class="fas fa-user-plus"></i>
+                    <h3>Become a Member</h3>
+                    <p>Register with us to explore opportunities that can benefit You and UNITED POTENTIAL AFRICA COMPANY LIMITED</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resource Modals -->
+    <div id="profile-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Company Profile</h2>
+            <p>Download our company profile to learn more about our operations, values, and services.</p>
+            <a href="#" class="btn">Download PDF</a>
+        </div>
+    </div>
+
+    <div id="partners-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Guide to New Partners</h2>
+            <p>Register online to become a partner with UNITED POTENTIAL AFRICA COMPANY LIMITED.</p>
+            <form>
+                <div class="form-group">
+                    <label for="partner-name">Organization Name</label>
+                    <input type="text" id="partner-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="partner-email">Email Address</label>
+                    <input type="email" id="partner-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="partner-phone">Phone Number</label>
+                    <input type="tel" id="partner-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="partner-interests">Areas of Interest</label>
+                    <textarea id="partner-interests" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="youth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Youth and Farmers Registration Portal</h2>
+            <p>Register online to access opportunities with UNITED POTENTIAL AFRICA COMPANY LIMITED.</p>
+            <form>
+                <div class="form-group">
+                    <label for="youth-name">Full Name</label>
+                    <input type="text" id="youth-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="youth-email">Email Address</label>
+                    <input type="email" id="youth-email">
+                </div>
+                <div class="form-group">
+                    <label for="youth-phone">Phone Number</label>
+                    <input type="tel" id="youth-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="youth-location">Location</label>
+                    <input type="text" id="youth-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="youth-interests">Areas of Interest</label>
+                    <select id="youth-interests">
+                        <option value="farming">Farming</option>
+                        <option value="agro-processing">Agro-processing</option>
+                        <option value="logistics">Logistics</option>
+                        <option value="training">Training Programs</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="member-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 class="modal-title">Become a Member</h2>
+            <p>Register with us to explore opportunities that can benefit You and UNITED POTENTIAL AFRICA COMPANY LIMITED.</p>
+            <form>
+                <div class="form-group">
+                    <label for="member-type">Member Type</label>
+                    <select id="member-type">
+                        <option value="individual">Individual</option>
+                        <option value="organization">Organization</option>
+                        <option value="farmer">Farmer</option>
+                        <option value="youth">Youth</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="member-name">Full Name / Organization Name</label>
+                    <input type="text" id="member-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="member-email">Email Address</label>
+                    <input type="email" id="member-email">
+                </div>
+                <div class="form-group">
+                    <label for="member-phone">Phone Number</label>
+                    <input type="tel" id="member-phone" required>
+                </div>
+                <div class="form-group">
+                    <label for="member-location">Location</label>
+                    <input type="text" id="member-location" required>
+                </div>
+                <div class="form-group">
+                    <label for="member-benefits">Expected Benefits</label>
+                    <textarea id="member-benefits" rows="3"></textarea>
+                </div>
+                <button type="submit" class="btn">Submit Registration</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Partners Section -->
+    <section id="partners" class="partners">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Partners</h2>
+                <p>We collaborate with leading organizations to deliver exceptional services.</p>
+            </div>
+            <div class="partner-logos">
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=KPD+PLC" alt="KPD PLC">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=KPD+Clearing" alt="KPD Clearing">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=CRDB+Bank" alt="CRDB Bank">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=NMB+Bank" alt="NMB Bank">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://via.placeholder.com/150x80?text=NBC+Bank" alt="NBC Bank">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section id="faqs" class="faqs">
+        <div class="container">
+            <div class="section-title">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about our company and services.</p>
+            </div>
+            <div class="accordion">
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>When was UNITED POTENTIAL AFRICA COMPANY LIMITED established?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>UNITED POTENTIAL AFRICA COMPANY LIMITED was established in 2024 as a private entity registered in the United Republic of Tanzania.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>What are your main business areas?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Our main business areas include:</p>
+                            <ul>
+                                <li>Agribusiness and agro-processing</li>
+                                <li>Logistics and transportation management</li>
+                                <li>Consultancy services</li>
+                                <li>Climate smart initiatives</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How can I partner with your organization?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>You can register as a partner through our "Guide to New Partners" portal in the Resource Center section of our website. Our team will review your application and contact you to discuss potential collaboration opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>Do you offer training programs for farmers?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>Yes, through our Agribusiness Resilience Program, we provide access to customized advice and in-depth business plans completely free of charge. This includes training programs on improving productivity and profitability in agricultural operations.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <div class="accordion-header">
+                        <h3>How can I contact your team?</h3>
+                        <i class="fas fa-plus"></i>
+                    </div>
+                    <div class="accordion-content">
+                        <div class="accordion-content-inner">
+                            <p>You can reach us through the contact information provided in the Contact Us section of our website, or by filling out the contact form. Our main office is located at Block A, plot number 5 Kayanga, Kagera, P.O.Box 323 Karagwe, United Republic of Tanzania.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our team for inquiries and collaborations.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Our Office</h3>
+                    <p>We'd love to hear from you! Whether you have questions about our services, want to explore partnership opportunities, or need support, our team is ready to assist you.</p>
+                    
+                    <div class="contact-details">
+                        <div>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Block A, plot number 5 Kayanga, Kagera, P.O.Box 323 Karagwe, United Republic of Tanzania</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-phone"></i>
+                            <p>(+255) 625753217</p>
+                        </div>
+                        <div>
+                            <i class="fas fa-envelope"></i>
+                            <p>upacompanyltd@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send Us a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Your Name</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>UNITED POTENTIAL AFRICA</h3>
+                    <p>Strengthening rural communities through sustainable agribusiness and market development in Tanzania.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#business">Our Business</a></li>
+                        <li><a href="#team">Our Team</a></li>
+                        <li><a href="#resources">Resource Center</a></li>
+                        <li><a href="#partners">Partners</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Business Areas</h3>
+                    <ul>
+                        <li><a href="#agribusiness">Agribusiness</a></li>
+                        <li><a href="#logistics">Logistics</a></li>
+                        <li><a href="#consultancy">Consultancy</a></li>
+                        <li><a href="#climate-smart">Climate Smart</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Block A, Kayanga, Kagera</li>
+                        <li><i class="fas fa-phone"></i> (+255) 625753217</li>
+                        <li><i class="fas fa-envelope"></i> upacompanyltd@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 UNITED POTENTIAL AFRICA COMPANY LIMITED. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const nav = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Modal Functionality
+        const modals = {
+            'read-more-about': 'about-modal',
+            'read-more-agribusiness': 'agribusiness-modal',
+            'read-more-logistics': 'logistics-modal',
+            'read-more-consultancy': 'consultancy-modal',
+            'read-more-climate-smart': 'climate-smart-modal',
+            'read-more-director': 'director-modal',
+            'profile-resource': 'profile-modal',
+            'partners-resource': 'partners-modal',
+            'youth-resource': 'youth-modal',
+            'member-resource': 'member-modal'
+        };
+        
+        // Open modals
+        Object.keys(modals).forEach(btnId => {
+            const btn = document.getElementById(btnId);
+            if (btn) {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    document.getElementById(modals[btnId]).style.display = 'block';
+                });
+            }
+        });
+        
+        // Close modals
+        const closeButtons = document.querySelectorAll('.close-btn');
+        closeButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                btn.closest('.modal').style.display = 'none';
+            });
+        });
+        
+        // Close modal when clicking outside
+        window.addEventListener('click', (e) => {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+        
+        // Accordion functionality
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        accordionHeaders.forEach(header => {
+            header.addEventListener('click', () => {
+                const item = header.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all items first
+                document.querySelectorAll('.accordion-item').forEach(i => {
+                    i.classList.remove('active');
+                    i.querySelector('.accordion-content').style.maxHeight = null;
+                    i.querySelector('.fa-plus').classList.replace('fa-minus', 'fa-plus');
+                });
+                
+                // Open clicked item if it wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                    const content = item.querySelector('.accordion-content');
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    header.querySelector('i').classList.replace('fa-plus', 'fa-minus');
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    if (window.innerWidth <= 768) {
+                        nav.style.display = 'none';
+                    }
+                }
+            });
+        });
+        
+        // Form submission handling (prevent default)
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Form submission would be processed in a live environment. Thank you!');
+                form.reset();
+                
+                // Close the modal if this is a modal form
+                const modal = form.closest('.modal');
+                if (modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
